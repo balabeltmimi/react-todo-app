@@ -1,6 +1,7 @@
 import React, { useState } from "react";
+import "./App.css";
 
-function Todo({todo}) {
+function Todo({ todo }) {
   return (
     <div className="todo">
       {todo.text}
@@ -10,19 +11,21 @@ function Todo({todo}) {
 
 function App() {
   const [todos, setTodos] = useState([
-    {
-      text: 'kuy',
-      text: 'prayut',
-    }
+    { text: "one" },
+    { text: "two" }
   ])
+
+  return (
+    <div className="app">
+      <div className="todo-list">
+        {todos.map((todo, index) => (
+          <Todo
+            todo={todo}
+          />
+        ))}
+      </div>
+    </div>
+  );
 }
 
-return (
-  <div className="app">
-    <div className="todo-list">
-
-    </div>
-  </div>
-)
-
-exports[App]
+export default App
